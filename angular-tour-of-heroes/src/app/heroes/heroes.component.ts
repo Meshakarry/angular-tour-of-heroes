@@ -12,12 +12,6 @@ import { MessageService } from '../message.service';
 })
 export class HeroesComponent implements OnInit {
  heroes:Hero[]=[];
- selectedHero:Hero
-
- onSelect(hero:Hero){
-  this.selectedHero=hero;
-  this.messageServices.addMessage(`You selected a hero with id=${hero.id}`)
- }
   constructor( private heroservice:HeroService,private messageServices:MessageService) //say that this is injection site 
   { }
    getHeroes():void{

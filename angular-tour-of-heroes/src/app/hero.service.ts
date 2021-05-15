@@ -15,4 +15,9 @@ export class HeroService {
     this.messageService.addMessage('WOOOW , fethced heroess!');
     return heroes;
   }
+  getHero(id:number):Observable<Hero>{
+    const hero=HEROES.find(h=>h.id===id) as Hero;
+    this.messageService.addMessage(`Hero found details ${hero.id} `);
+    return of(hero);
+  }
 }
